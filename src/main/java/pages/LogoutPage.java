@@ -17,7 +17,8 @@ private WebDriver driver;
 	
 	public LogoutPage CheckLogout(){
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement logout = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[text()='Logout']")));
+		String xpathlogout = "//*[text()='Logout']";
+		WebElement logout = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpathlogout)));
 		String textologout = logout.getText();
 		Assert.assertEquals("Logout", textologout);
 		

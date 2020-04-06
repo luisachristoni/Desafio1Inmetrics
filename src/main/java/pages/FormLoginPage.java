@@ -12,14 +12,18 @@ public class FormLoginPage {
 		this.driver = driver;
 	}
 	
-	public FormLoginPage digitarDados() {
-		WebElement loginin = driver.findElement(By.xpath("//*[@id='signinbox']//input[@name='login']"));
+	public FormLoginPage digitarDados(String user, String password) {
+		String xpathlogin = "//*[@id='signinbox']//input[@name='login']";
+		String xpathpasswordin = "//*[@id='signinbox']//input[@name='password']";
+		String xpathsigninbutton = "//*[@id='signinbox']//a[text()='Sign in']";
+		
+		WebElement loginin = driver.findElement(By.xpath(xpathlogin));
 		loginin.click();
-		loginin.sendKeys("luisachristoni");
-		WebElement passwordin = driver.findElement(By.xpath("//*[@id='signinbox']//input[@name='password']"));
+		loginin.sendKeys(user);
+		WebElement passwordin = driver.findElement(By.xpath(xpathpasswordin));
 		passwordin.click();
-		passwordin.sendKeys("123456");
-		WebElement signinbutton = driver.findElement(By.xpath("//*[@id='signinbox']//a[text()='Sign in']"));
+		passwordin.sendKeys(password);
+		WebElement signinbutton = driver.findElement(By.xpath(xpathsigninbutton));
 		signinbutton.click();
 	
 		return this;

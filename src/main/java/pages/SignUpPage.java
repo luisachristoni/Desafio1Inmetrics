@@ -12,7 +12,8 @@ private WebDriver driver;
 	}
 	
 	public SignUpPage clicarsignup(){
-		WebElement signup = driver.findElement(By.id("signup"));
+		String idsignup = "signup";
+		WebElement signup = driver.findElement(By.id(idsignup));
 		signup.click();
 		return this;
 	}

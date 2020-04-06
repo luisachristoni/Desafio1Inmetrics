@@ -19,36 +19,49 @@ public class NewTaskPage {
 	}
 	
 	public NewTaskPage criarTask(){
-		WebElement tasksbutton = driver.findElement(By.xpath("//*[text()='Amazing!']/..//a"));
+		String xpathtaskbutton = "//*[text()='Amazing!']/..//a";
+		WebElement tasksbutton = driver.findElement(By.xpath(xpathtaskbutton));
 		tasksbutton.click();
 		captura.capturatela(driver, "Report\\Capturas\\Cenario - " + Generator.datetime() + ".png");
 
-		WebElement addtasksbutton = driver.findElement(By.xpath("//*[@data-target='addtask']"));
+		String xpathaddtaskbutton = "//*[@data-target='addtask']";
+		WebElement addtasksbutton = driver.findElement(By.xpath(xpathaddtaskbutton));
 		addtasksbutton.click();
 		captura.capturatela(driver, "Report\\Capturas\\Cenario - " + Generator.datetime() + ".png");
 
-		WebElement tasktitle = driver.findElement(By.name("title"));
-		WebElement tellus = driver.findElement(By.xpath("//*[@placeholder='Tell us, please!']"));
-		WebElement done = driver.findElement(By.name("done"));
-		WebElement savebutton = driver.findElement(By.xpath("//*[text()='Save']"));
+		String nametasktitle = "title";
+		WebElement tasktitle = driver.findElement(By.name(nametasktitle));
+		String xpathtellus = "//*[@placeholder='Tell us, please!']";
+		WebElement tellus = driver.findElement(By.xpath(xpathtellus));
+		String namedone = "done";
+		WebElement done = driver.findElement(By.name(namedone));
+		String xpathsavebutton = "//*[text()='Save']";
+		WebElement savebutton = driver.findElement(By.xpath(xpathsavebutton));
+		
 		tasktitle.click();
 		tasktitle.sendKeys("Titulo");
-
-		WebElement datelimit = driver.findElement(By.name("date"));
+		
+		String namedatelimit = "date";
+		WebElement datelimit = driver.findElement(By.name(namedatelimit));
 		// clique com o botão direito do mouse
 		Actions oAction = new Actions(driver);
 		oAction.moveToElement(datelimit);
 		oAction.contextClick(datelimit).build().perform();
-		WebElement todaydate = driver.findElement(By.xpath("//button[text()='Today']"));
+		
+		String xpathtodaydate = "//button[text()='Today']";
+		WebElement todaydate = driver.findElement(By.xpath(xpathtodaydate));
 		todaydate.click();
-		WebElement okbuttondate = driver.findElement(By.xpath("//button[text()='Ok']"));
+		String xpathokbuttondate = "//button[text()='Ok']";
+		WebElement okbuttondate = driver.findElement(By.xpath(xpathokbuttondate));
 		okbuttondate.click();
 
-		WebElement timelimit = driver.findElement(By.name("time"));
+		String nametimelimit = "time";
+		WebElement timelimit = driver.findElement(By.name(nametimelimit));
 		oAction.moveToElement(timelimit);
 		oAction.contextClick(timelimit).build().perform();
 
-		WebElement okbuttontime = driver.findElement(By.xpath("//button[text()='OK']"));
+		String xpathokbuttontime = "//button[text()='OK']";
+		WebElement okbuttontime = driver.findElement(By.xpath(xpathokbuttontime));
 		okbuttontime.click();
 
 		tellus.sendKeys("Desafio");
@@ -63,12 +76,15 @@ public class NewTaskPage {
 	}
 	
 	public NewTaskPage checkTask(){
-		WebElement msgsucesso = driver.findElement(By.xpath("//*[text()='The task has been added, pretty simple!']"));
+		String xpathmsgsucesso = "//*[text()='The task has been added, pretty simple!']";
+		WebElement msgsucesso = driver.findElement(By.xpath(xpathmsgsucesso));
 		String textosucesso = msgsucesso.getText();
 		Assert.assertEquals("The task has been added, pretty simple!", textosucesso);
 		captura.capturatela(driver, "Report\\Capturas\\Cenario - " + Generator.datetime() + ".png");
 
-		WebElement taskcriada = driver.findElement(By.xpath("//*[@id='tasklist']/li/span[text()='Titulo']"));
+		String xpathtaskcriada = "//*[@id='tasklist']/li/span[text()='Titulo']";
+		System.out.println(xpathtaskcriada);
+		WebElement taskcriada = driver.findElement(By.xpath(xpathtaskcriada));
 		String textotaskcriada = taskcriada.getText();
 		Assert.assertEquals("Titulo", textotaskcriada);
 		

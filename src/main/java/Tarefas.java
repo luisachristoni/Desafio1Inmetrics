@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.pt.Dado;
-import cucumber.api.java.pt.Então;
+import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 import pages.FormLoginPage;
 import pages.LoginPage;
@@ -40,7 +40,7 @@ public class Tarefas {
 		new SignUpFormPage(driver).clickSalvar();
 	}
 
-	@Então("^visualizo a tela incial$")
+	@Entao("^visualizo a tela incial$")
 	public void visualizoATelaIncial() throws Throwable {
 		new LogoutPage(driver).CheckLogout();
 		captura.capturatela(driver, "Report\\Capturas\\Cenario 1 - " + Generator.datetime() + ".png");
@@ -53,10 +53,10 @@ public class Tarefas {
 
 	@Quando("^informo os dados de login$")
 	public void informo_os_dados_de_login() throws Throwable {
-		new FormLoginPage(driver).digitarDados();
+		new FormLoginPage(driver).digitarDados("luisachristoni", "123456");
 	}
 
-	@Então("^visualizo a tela inicial$")
+	@Entao("^visualizo a tela inicial$")
 	public void visualizoATelaInicial() throws Throwable {
 		new LogoutPage(driver).CheckLogout();
 		captura.capturatela(driver, "Report\\Capturas\\Cenario 2 - " + Generator.datetime() + ".png");
@@ -65,7 +65,7 @@ public class Tarefas {
 	@Dado("^que estou logado$")
 	public void queEstouLogado() throws Throwable {
 		new LoginPage(driver).clicarsignin();
-		new FormLoginPage(driver).digitarDados();
+		new FormLoginPage(driver).digitarDados("luisachristoni", "123456");
 		new LogoutPage(driver).CheckLogout();
 	}
 
@@ -74,7 +74,7 @@ public class Tarefas {
 		new NewTaskPage(driver).criarTask();
 	}
 
-	@Então("^consigo visualizar a tarefa criada$")
+	@Entao("^consigo visualizar a tarefa criada$")
 	public void consigoVisualizarATarefaCriada() throws Throwable {
 		new NewTaskPage(driver).checkTask();
 	}

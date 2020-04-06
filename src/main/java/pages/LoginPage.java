@@ -13,7 +13,8 @@ public class LoginPage {
 	}
 	
 	public LoginPage clicarsignin(){
-		WebElement signin = driver.findElement(By.xpath("(//*[text()='Sign in'])[1]"));
+		String xpathsignin = "(//*[text()='Sign in'])[1]";
+		WebElement signin = driver.findElement(By.xpath(xpathsignin));
 		signin.click();
 		
 		return this;
