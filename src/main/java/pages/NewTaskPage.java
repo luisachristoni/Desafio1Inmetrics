@@ -22,12 +22,12 @@ public class NewTaskPage {
 		String xpathtaskbutton = "//*[text()='Amazing!']/..//a";
 		WebElement tasksbutton = driver.findElement(By.xpath(xpathtaskbutton));
 		tasksbutton.click();
-		captura.capturatela(driver, "Report\\Capturas\\Cenario - " + Generator.datetime() + ".png");
+		captura.capturatela(driver, "src\\main\\resources\\Report\\Capturas\\Cenario - " + Generator.datetime() + ".png");
 
 		String xpathaddtaskbutton = "//*[@data-target='addtask']";
 		WebElement addtasksbutton = driver.findElement(By.xpath(xpathaddtaskbutton));
 		addtasksbutton.click();
-		captura.capturatela(driver, "Report\\Capturas\\Cenario - " + Generator.datetime() + ".png");
+		captura.capturatela(driver, "src\\main\\resources\\Report\\Capturas\\Cenario - " + Generator.datetime() + ".png");
 
 		String nametasktitle = "title";
 		WebElement tasktitle = driver.findElement(By.name(nametasktitle));
@@ -69,7 +69,7 @@ public class NewTaskPage {
 		Select combo = new Select(done);
 		int numcombo = GeradorNumero.geraCombo();
 		combo.selectByIndex(numcombo);
-		captura.capturatela(driver, "Report\\Capturas\\Cenario - " + Generator.datetime() + ".png");
+		captura.capturatela(driver, "src\\main\\resources\\Report\\Capturas\\Cenario - " + Generator.datetime() + ".png");
 
 		savebutton.click();
 		return this;
@@ -80,7 +80,7 @@ public class NewTaskPage {
 		WebElement msgsucesso = driver.findElement(By.xpath(xpathmsgsucesso));
 		String textosucesso = msgsucesso.getText();
 		Assert.assertEquals("The task has been added, pretty simple!", textosucesso);
-		captura.capturatela(driver, "Report\\Capturas\\Cenario - " + Generator.datetime() + ".png");
+		captura.capturatela(driver, "src\\main\\resources\\Report\\Capturas\\Cenario - " + Generator.datetime() + ".png");
 
 		String xpathtaskcriada = "//*[@id='tasklist']/li/span[text()='Titulo']";
 		System.out.println(xpathtaskcriada);

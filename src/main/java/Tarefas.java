@@ -32,7 +32,7 @@ public class Tarefas {
 	@Quando("^informo dados de cadastro$")
 	public void informoDadosDeCadastro() throws Throwable {
 		new SignUpFormPage(driver).digitarDadosCadastro();
-		captura.capturatela(driver, "Report\\Capturas\\Cenario 1 - " + Generator.datetime() + ".png");
+		captura.capturatela(driver, "src\\main\\resources\\Report\\Capturas\\Cenario 1 - " + Generator.datetime() + ".png");
 	}
 
 	@Quando("^clico em salvar$")
@@ -43,7 +43,7 @@ public class Tarefas {
 	@Entao("^visualizo a tela incial$")
 	public void visualizoATelaIncial() throws Throwable {
 		new LogoutPage(driver).CheckLogout();
-		captura.capturatela(driver, "Report\\Capturas\\Cenario 1 - " + Generator.datetime() + ".png");
+		captura.capturatela(driver, "src\\main\\resources\\Report\\Capturas\\Cenario 1 - " + Generator.datetime() + ".png");
 	}
 
 	@Dado("^que acesso a tela de login$")
@@ -59,7 +59,7 @@ public class Tarefas {
 	@Entao("^visualizo a tela inicial$")
 	public void visualizoATelaInicial() throws Throwable {
 		new LogoutPage(driver).CheckLogout();
-		captura.capturatela(driver, "Report\\Capturas\\Cenario 2 - " + Generator.datetime() + ".png");
+		captura.capturatela(driver, "src\\main\\resources\\Report\\Capturas\\Cenario 2 - " + Generator.datetime() + ".png");
 	}
 
 	@Dado("^que estou logado$")
