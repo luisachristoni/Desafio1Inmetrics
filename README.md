@@ -66,11 +66,11 @@ _Informar dados da tarefa
 _Validar que a tarefa existe
 
 # Step by Step
-_Baixar e instalar Java 8
+_Baixar e instalar Java 8: *https://www.java.com/pt_BR/download/*
 
-_Baixar e instalar JDK 8
+_Baixar e instalar JDK 8: *https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html*
 
-_Baixar  Eclipse IDE
+_Baixar  Eclipse IDE: *https://www.eclipse.org/downloads/packages/release/neon/3*
 
 _Clonar Projeto
 
