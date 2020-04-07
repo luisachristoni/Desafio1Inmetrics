@@ -74,6 +74,9 @@ _Baixar  Eclipse IDE: *https://www.eclipse.org/downloads/packages/release/neon/3
 
 _Clonar Projeto
 
+_Importar o projeto para o Eclipse
+
+_Executar a Classe Runner
 
 
 
